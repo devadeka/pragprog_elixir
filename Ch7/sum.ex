@@ -23,7 +23,8 @@ defmodule MyList do
     #Exercise: ListsAndRecursion-2
     defmodule Max do
         def of([], _), do: nil
-        def of([elem]), do: elem
-        def of([ head | tail ]), do: if (head > of(tail)), do: head, else: of(tail)
+        def of([a,b]) when a > b, do: a
+        def of([_,b]), do: b
+        def of([ head | tail ]), do: of( [head, of(tail)] )
     end
 end
