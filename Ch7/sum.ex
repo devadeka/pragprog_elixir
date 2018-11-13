@@ -19,4 +19,11 @@ defmodule MyList do
         def mapsum([], _), do: 0
         def mapsum([ head | tail ], func), do: func.(head) + mapsum(tail, func)
     end
+
+    #Exercise: ListsAndRecursion-2
+    defmodule Max do
+        def of([], _), do: nil
+        def of([elem]), do: elem
+        def of([ head | tail ]), do: if (head > of(tail)), do: head, else: of(tail)
+    end
 end
